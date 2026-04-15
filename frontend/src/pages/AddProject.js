@@ -28,7 +28,7 @@ function AddProject() {
     await API.post("/projects", data);
 
     alert("Project Added");
-    window.location.href = "/admin/projects";
+    window.location.href = "/projects";
   };
 
   return (

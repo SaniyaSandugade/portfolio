@@ -17,7 +17,7 @@ function AddSkill() {
     }
 
     await API.post("/skills", form);
-    window.location.href = "/admin/skills";
+    window.location.href = "/skills";
   };
 
   return (
