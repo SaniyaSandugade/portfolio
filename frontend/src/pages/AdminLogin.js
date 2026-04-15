@@ -25,7 +25,7 @@ function AdminLogin({ dark, setDark }) {
       localStorage.setItem("token", res.data.token);
 
       alert("Login Successful ✅");
-      window.location.href = "/admin/dashboard";
+      window.location.href = "/dashboard";
 
     } catch (err) {
       alert("Login Failed ❌");
