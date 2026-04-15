@@ -2,6 +2,7 @@ import { useState } from "react";
 import API from "../services/api";
 import "../styles/form.css";
 
+
 function AddSkill() {
   const [form, setForm] = useState({
     name: "",
@@ -51,10 +52,21 @@ function AddSkill() {
           }
         />
 
+       
+
+     
+
+   
+
+
         <button onClick={addSkill}>Add Skill</button>
       </div>
     </div>
   );
 }
+
+
+
+
 
 export default AddSkill;
