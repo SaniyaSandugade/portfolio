@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://portfolio-backend-yp27.onrender.com/api",
+  baseURL: "https://portfolio-backend-yp27.onrender.com",
 });
 
 API.interceptors.request.use((req) => {
@@ -14,17 +14,20 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-// 🔹 Skills APIs
+// 🔹 Skills
 export const getSkills = () => API.get("/skills");
 export const createSkill = (data) => API.post("/skills", data);
 export const deleteSkill = (id) => API.delete(`/skills/${id}`);
 
-// 🔹 Projects APIs
+// 🔹 Projects
 export const getProjects = () => API.get("/projects");
 export const createProject = (data) => API.post("/projects", data);
 export const deleteProject = (id) => API.delete(`/projects/${id}`);
 
-// 🔹 Contact API
+// 🔹 Auth (IMPORTANT FIX)
+export const loginAdmin = (data) => API.post("/api/auth/login", data);
+
+// 🔹 Contact
 export const sendMessage = (data) => API.post("/contact", data);
 
 export default API;
