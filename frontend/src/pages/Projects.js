@@ -70,7 +70,7 @@ function Projects() {
           >
             {/* Image */}
             <img
-              src={`http://localhost:5000/uploads/${project.image}`}
+              src={`https://portfolio-backend-yp27.onrender.com/uploads/${project.image}`}
               alt="project"
               loading="lazy"
             />
@@ -136,7 +136,7 @@ function Projects() {
             <h2>{selectedProject.title}</h2>
 
             <img
-              src={`http://localhost:5000/uploads/${selectedProject.image}`}
+              src={`https://portfolio-backend-yp27.onrender.com/uploads/${selectedProject.image}`}
               alt=""
               style={{ width: "100%", borderRadius: "10px" }}
             />

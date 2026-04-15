@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 import "../styles/form.css";
 
-
 function AddSkill() {
+  const navigate = useNavigate(); // ✅ ADD THIS
+
   const [form, setForm] = useState({
     name: "",
     category: "Frontend",
@@ -11,13 +13,22 @@ function AddSkill() {
   });
 
   const addSkill = async () => {
-    if (!form.name || form.proficiency === "") {
-      alert("All fields required");
-      return;
-    }
+    try {
+      if (!form.name || form.proficiency === "") {
+        alert("All fields required");
+        return;
+      }
 
-    await API.post("/skills", form);
-    window.location.href = "/skills";
+      await API.post("/skills", form);
+
+      alert("Skill added successfully ✅");
+
+      // ✅ React Router navigation (NO page reload)
+      navigate("/admin/skills");
+    } catch (error) {
+      console.log(error);
+      alert("Failed to add skill ❌");
+    }
   };
 
   return (
@@ -52,21 +63,12 @@ function AddSkill() {
           }
         />
 
-       
-
-     
-
-   
-
-
-        <button onClick={addSkill}>Add Skill</button>
+        <button onClick={addSkill}>
+          Add Skill
+        </button>
       </div>
     </div>
   );
 }
-
-
-
-
 
 export default AddSkill;

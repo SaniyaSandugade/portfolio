@@ -53,8 +53,8 @@ function App() {
           <Routes>
             <Route path="/" element={<AdminLogin dark={dark} setDark={setDark} />} />
             <Route path="/admin/dashboard" element={<Dashboard dark={dark} setDark={setDark} />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
+            <Route path="/admin/projects" element={<Projects />} />
+            <Route path="/admin/skills" element={<Skills />} />
             <Route path="/admin/add-skill" element={<AddSkill />} />
             <Route path="/admin/add-project" element={<AddProject />} />
             <Route path="/contact" element={<Contact />} />

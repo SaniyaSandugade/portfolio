@@ -1,16 +1,15 @@
 import { useState } from "react";
-import API from "../services/api";   // ✅ USE THIS
+import API from "../services/api";
 import "../styles/form.css";
-
-
-
-
+import { useNavigate } from "react-router-dom";
 
 function AdminLogin({ dark, setDark }) {
   const [form, setForm] = useState({
     email: "",
     password: ""
   });
+
+  const navigate = useNavigate(); // ✅ STEP 2
 
   const login = async () => {
     try {
@@ -19,13 +18,15 @@ function AdminLogin({ dark, setDark }) {
         return;
       }
 
-      // ✅ FIXED API CALL
-      const res = await API.post("/api/auth/login", form);
+      // ✅ API CALL (keep correct backend route)
+      const res = await API.post("/auth/login", form);
 
       localStorage.setItem("token", res.data.token);
 
       alert("Login Successful ✅");
-      window.location.href = "/dashboard";
+
+      // 🚀 FIXED NAVIGATION (NO window.location)
+      navigate("/admin/dashboard");
 
     } catch (err) {
       alert("Login Failed ❌");

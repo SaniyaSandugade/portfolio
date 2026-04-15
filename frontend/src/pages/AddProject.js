@@ -25,10 +25,10 @@ function AddProject() {
     data.append("status", form.status);
     data.append("image", image);
 
-    await API.post("/projects", data);
+    await API.post("/api/projects", data);
 
     alert("Project Added");
-    window.location.href = "/projects";
+    window.location.href = "/admin/projects";
   };
 
   return (
