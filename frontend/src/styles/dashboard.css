@@ -1,0 +1,187 @@
+body {
+  font-family: Arial;
+  margin: 0; /* 🔥 FIX: remove default spacing */
+}
+
+.container {
+  display: flex;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #1f2937;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  margin: 10px 0;
+  text-decoration: none;
+}
+
+/* MAIN CONTENT */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 🔥 FIX: vertical alignment */
+  margin-bottom: 20px;
+}
+
+/* RIGHT SIDE BUTTONS */
+.nav-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background: #f3f4f6;
+  padding: 20px;
+  width: 150px;
+  border-radius: 8px;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+/* ================================= */
+/* 🌙 DARK MODE */
+/* ================================= */
+
+.dark {
+  background: #111;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.dark .sidebar {
+  background: #0f172a;
+  color: white;
+}
+
+/* Sidebar Links */
+.dark .sidebar a {
+  color: #cbd5f5;
+}
+
+/* Navbar */
+.dark .navbar {
+  color: white;
+}
+
+/* Cards */
+.dark .card {
+  background: #1e293b;
+  color: white;
+}
+
+/* Tables */
+.dark table {
+  color: white;
+}
+
+.dark table th,
+.dark table td {
+  border: 1px solid #444;
+}
+
+/* Buttons (global dark mode) */
+.dark button {
+  background: #334155;
+  color: white;
+}
+
+/* ================================= */
+/* BUTTONS */
+/* ================================= */
+
+/* DARK MODE BUTTON */
+.dark-btn {
+  background: #2563eb;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dark-btn:hover {
+  background: #1d4ed8;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+  background: #ef4444; /* 🔥 nicer red */
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* ================================= */
+/* SMOOTH TRANSITION */
+/* ================================= */
+
+* {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .main {
+    padding: 10px;
+  }
+
+  .cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* 💻 TABLET */
+@media (max-width: 1024px) {
+  .cards {
+    flex-wrap: wrap;
+  }
+}
