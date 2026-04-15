@@ -20,7 +20,7 @@ function AdminLogin({ dark, setDark }) {
       }
 
       // ✅ FIXED API CALL
-      const res = await API.post("/auth/login", form);
+      const res = await API.post("/api/auth/login", form);
 
       localStorage.setItem("token", res.data.token);
 
