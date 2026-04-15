@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import API from "../services/api";   // ✅ USE THIS
 import "../styles/form.css";
 
 function AdminLogin({ dark, setDark }) {
@@ -15,10 +15,8 @@ function AdminLogin({ dark, setDark }) {
         return;
       }
 
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        form
-      );
+      // ✅ FIXED API CALL
+      const res = await API.post("/auth/login", form);
 
       localStorage.setItem("token", res.data.token);
 
