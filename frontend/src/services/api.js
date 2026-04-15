@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://portfolio-backend-yp27.onrender.com",
+  baseURL: "https://portfolio-backend-yp27.onrender.com/api",
 });
 
 API.interceptors.request.use((req) => {
@@ -13,7 +13,6 @@ API.interceptors.request.use((req) => {
 
   return req;
 });
-
 
 // 🔹 Skills APIs
 export const getSkills = () => API.get("/skills");
@@ -29,4 +28,3 @@ export const deleteProject = (id) => API.delete(`/projects/${id}`);
 export const sendMessage = (data) => API.post("/contact", data);
 
 export default API;
-
